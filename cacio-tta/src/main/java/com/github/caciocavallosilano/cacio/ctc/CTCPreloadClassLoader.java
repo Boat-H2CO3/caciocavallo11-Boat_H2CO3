@@ -95,7 +95,7 @@ public class CTCPreloadClassLoader extends URLClassLoader {
     public void addURL(URL url) {
         super.addURL(url);
         try {
-            System.setProperty("java.class.path", System.getProperty("java.class.path") + ":" + new File(url.toURI()).getAbsolutePath());
+            System.setProperty("java.class.path", System.getProperty("java.class.path") + ":" + System.getenv("H2CO3Launcher_NATIVEDIR") + ":" + new File(url.toURI()).getAbsolutePath());
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
